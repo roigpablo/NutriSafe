@@ -16,4 +16,13 @@ public final class Alergenos {
 
     private Alergenos() {
     }
+
+    public static String nombre(String tag) {
+        for (int i = 0; i < TAGS.length; i++) {
+            if (TAGS[i].equals(tag)) {
+                return NOMBRES[i];
+            }
+        }
+        return tag.replace("en:", "");
+    }
 }
