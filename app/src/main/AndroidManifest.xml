@@ -15,19 +15,22 @@
         android:theme="@style/Theme.NutriSafe">
 
 
-        <!-- Modificado para probar el Perfil -->
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".ui.PerfilActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.PerfilActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.ConsultaActivity"
+            android:exported="false" />
 
 
     </application>
