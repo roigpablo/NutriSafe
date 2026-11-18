@@ -53,10 +53,40 @@
             android:orientation="vertical"
             android:visibility="gone">
 
+            <TextView
+                android:id="@+id/tvNivel"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/circulo"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMotivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Datos de Open Food Facts, que pueden ser incompletos. Revisa siempre la etiqueta."
+                android:textSize="12sp" />
+
             <ImageView
                 android:id="@+id/ivProducto"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginTop="12dp"
                 android:contentDescription="Imagen del producto"
                 android:scaleType="fitCenter" />
 
