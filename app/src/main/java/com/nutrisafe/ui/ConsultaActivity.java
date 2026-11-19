@@ -20,6 +20,8 @@ import com.nutrisafe.viewmodel.ConsultaViewModel;
 
 public class ConsultaActivity extends AppCompatActivity {
 
+    public static final String EXTRA_CODIGO = "codigo";
+
     private ConsultaViewModel viewModel;
     private EditText etCodigo;
     private ProgressBar pbCargando;
@@ -62,6 +64,12 @@ public class ConsultaActivity extends AppCompatActivity {
             }
             viewModel.buscar(codigo);
         });
+
+        String codigoRecibido = getIntent().getStringExtra(EXTRA_CODIGO);
+        if (codigoRecibido != null && savedInstanceState == null) {
+            etCodigo.setText(codigoRecibido);
+            viewModel.buscar(codigoRecibido);
+        }
     }
 
     private void mostrarMensaje(String texto) {

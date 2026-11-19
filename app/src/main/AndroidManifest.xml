@@ -41,6 +41,9 @@
             android:exported="false" />
 
 
+        <activity
+            android:name=".ui.BusquedaActivity"
+            android:exported="false" />
 
 
 
