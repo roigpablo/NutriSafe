@@ -36,6 +36,14 @@
             android:name=".ui.AcercaActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ui.AvisoActivity"
+            android:exported="false" />
+
+
+
+
+
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nutrisafe.ui.AcercaActivity;
+import com.nutrisafe.ui.AvisoActivity;
 import com.nutrisafe.ui.ConsultaActivity;
 import com.nutrisafe.ui.PerfilActivity;
 
@@ -14,6 +15,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        boolean aceptado = getSharedPreferences(AvisoActivity.PREFS, MODE_PRIVATE)
+                .getBoolean(AvisoActivity.CLAVE_ACEPTADO, false);
+        if (!aceptado) {
+            startActivity(new Intent(this, AvisoActivity.class));
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.btnPerfil).setOnClickListener(
