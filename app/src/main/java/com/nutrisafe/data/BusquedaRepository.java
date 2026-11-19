@@ -31,11 +31,11 @@ public class BusquedaRepository {
     private static final int LIMITE_POR_MINUTO = 10;
     private static final long VENTANA_MS = 60_000;
     private static final int TAMANO_PAGINA = 20;
+    private static final Deque<Long> envios = new ArrayDeque<>();
 
     private final SearchApi api = RetrofitClient.getSearchApi();
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final Handler principal = new Handler(Looper.getMainLooper());
-    private final Deque<Long> envios = new ArrayDeque<>();
 
     public void buscar(String texto, Callback callback) {
         executor.execute(() -> {
@@ -69,7 +69,7 @@ public class BusquedaRepository {
         });
     }
 
-    private synchronized boolean reservarEnvio() {
+    private static synchronized boolean reservarEnvio() {
         long ahora = System.currentTimeMillis();
         while (!envios.isEmpty() && ahora - envios.peekFirst() > VENTANA_MS) {
             envios.pollFirst();
