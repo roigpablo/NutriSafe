@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.nutrisafe.ui.AcercaActivity;
 import com.nutrisafe.ui.ConsultaActivity;
 import com.nutrisafe.ui.PerfilActivity;
 
@@ -19,5 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 v -> startActivity(new Intent(this, PerfilActivity.class)));
         findViewById(R.id.btnConsulta).setOnClickListener(
                 v -> startActivity(new Intent(this, ConsultaActivity.class)));
+        findViewById(R.id.btnAcerca).setOnClickListener(
+                v -> startActivity(new Intent(this, AcercaActivity.class)));
     }
 }

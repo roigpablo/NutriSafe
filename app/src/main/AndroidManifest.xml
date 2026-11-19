@@ -32,6 +32,9 @@
             android:name=".ui.ConsultaActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ui.AcercaActivity"
+            android:exported="false" />
 
     </application>
 
